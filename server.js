@@ -4,7 +4,7 @@ var bodyParser = require('body-parser')
 var TelegramBot = require('node-telegram-bot-api');
 
 var TOKEN = process.env.TOKEN
-var bot = new TelegramBot(TOKEN, {polling: true});
+var bot = new TelegramBot(TOKEN);
 
 app.use(bodyParser.json());
 
