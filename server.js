@@ -14,6 +14,26 @@ app.post('/', function(req, res) {
     res.send(true);
 });
 
+
+bot.onText(/\/ping/, function (msg) {
+	var fromId = msg.chat.id;
+	bot.sendMessage(fromId, "Pong");
+	
+});
+
+bot.onText(/\/actualizar/, function (msg) {
+	var fromId = msg.chat.id;
+	
+	/* var name = req.body.repository.repo_name;
+    var tag = req.body.push_data.tag;
+    var repo = name.split("/")[1]
+	*/ 
+
+	bot.sendMessage(fromId, "Nombre del DockerHub desarrollo/produccion, ejemplo ( /actualizar siep-cake:produccion )");
+	
+});
+
+
 http.createServer(app).listen(process.env.PORT, function() {
     console.log('Server started: Listening');
 });
